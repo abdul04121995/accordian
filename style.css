@@ -1,0 +1,55 @@
+:root {
+  --bg: #f4f4f9;
+  --accordian-bg: white;
+  --accordian-header: #e0e0e7;
+  --accordian-text: #2d2d35;
+  --hover-color: #007bff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg);
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/static/Inter_18pt-Regular.ttf");
+}
+section {
+  width: min(890px, 90%);
+  margin-inline: auto;
+  font-family: "Inter";
+  margin-top: 2rem;
+}
+.accordian {
+  color: var(--accordian-text);
+  background-color: var(--accordian-bg);
+}
+.accordian__heading {
+  background-color: var(--accordian-header);
+  font-size: clamp(1rem, 0.7rem + 0.8vw, 2rem);
+  margin-bottom: 0.5rem;
+  padding: 0.54rem;
+  cursor: pointer;
+}
+.accordian__para {
+  max-height: 0;
+  overflow: hidden;
+  transform: scaleY(0);
+  transition: transform 0.3s linear;
+  transform-origin: top;
+}
+.accordian__para--wrapper {
+  padding: 0.5rem;
+  line-height: 1.1;
+  font-size: clamp(1rem, 0.8rem + 0.7vw, 2rem);
+  text-align: justify;
+}
+.accordian__heading:hover + .accordian__para {
+  max-height: 800px;
+  transform: scaleY(1);
+}
