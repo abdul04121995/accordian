@@ -43,13 +43,13 @@ section {
   transition: transform 0.3s linear;
   transform-origin: top;
 }
+.accordian__para.active {
+  max-height: 800px;
+  transform: scaleY(1);
+}
 .accordian__para--wrapper {
   padding: 0.5rem;
   line-height: 1.1;
   font-size: clamp(1rem, 0.8rem + 0.7vw, 2rem);
   text-align: justify;
-}
-.accordian__heading:hover + .accordian__para {
-  max-height: 800px;
-  transform: scaleY(1);
 }
